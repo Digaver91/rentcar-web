@@ -1,0 +1,104 @@
+#trigger, #burger, #burger:before, #burger:after {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #ff6804;
+    width: 30px;
+    height: 5px;
+    transition: .2s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+#trigger {
+    height: 25px;
+    background: none;
+}
+#burger:before {
+    content: " ";
+    top: 10px;
+    left: 0;
+}
+#burger:after {
+    content: " ";
+    top: 20px;
+    left: 0;
+}
+#menu-toggle:checked + #trigger + #burger {
+    top: 35px;
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+}
+
+#menu-toggle:checked + #trigger + #burger:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu-toggle:checked + #trigger + #burger:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+#menu {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: #fff;
+    border-bottom-right-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    animation: not-checked-anim .2s both;
+    transition: .2s;
+    
+}
+#menu-toggle:checked + #trigger + #burger + #menu {
+    animation: checked-anim 1s ease both;
+}
+#menu-toggle:checked + #trigger ~ #menu > li, a {
+    display: block;
+}
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    display: none;
+}
+
+.header__logo {
+    position: absolute;
+    margin: 20px;
+    left: 30%;
+    object-fit: cover;
+    width: 60%;
+    height: 10%;
+}
+
+.header__main {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/auto_main.png);
+    background-position: 30%;
+    height: 100vh;
+    padding-top: 270px;
+}
+.header__main-subtitle {
+font-size: 12px;
+color: gray;
+font-weight: 400;
+padding: 0 70px 20px 70px;
+}
+.header__main-title {
+    font-size: 36px;
+    padding: 0 70px 20px 70px;
+}
+.header__main-divider {
+    padding: 0 70px 20px 70px;
+}
+.header__main-text {
+    color: grey;
+    font-size: 18px;
+    padding: 0 70px 20px 70px;
+}
+.header__main-social img {
+    padding: 0 120px 20px 70px;
+}
